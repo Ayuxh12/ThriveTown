@@ -1,0 +1,123 @@
+[gd_scene load_steps=13 format=3 uid="uid://ey7bka7mlyc5"]
+
+[ext_resource type="Script" path="res://scenes/growingzone.gd" id="1_sgsev"]
+[ext_resource type="Texture2D" uid="uid://bhixfchjxyovx" path="res://scenes/customers/farmingTilesheetComplete.png" id="2_aab4i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0lmq"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_657o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0lmq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m83y1"]
+size = Vector2(14, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gea6"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(176, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjbeh"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(160, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2t6k"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(144, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt3ea"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(128, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4kt8"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(112, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ymks"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(96, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tikc3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gea6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjbeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2t6k")
+}],
+"loop": true,
+"name": &"carrotgrowing",
+"speed": 0.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"none",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt3ea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4kt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ymks")
+}],
+"loop": true,
+"name": &"oniongrowing",
+"speed": 0.0
+}]
+
+[node name="growingzone" type="StaticBody2D"]
+light_mask = 4
+visibility_layer = 4
+script = ExtResource("1_sgsev")
+
+[node name="hoedland" type="AnimatedSprite2D" parent="."]
+show_behind_parent = true
+light_mask = 2
+visibility_layer = 2
+position = Vector2(14, 15)
+scale = Vector2(1.125, 1.25)
+sprite_frames = SubResource("SpriteFrames_657o8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(14, 15)
+shape = SubResource("RectangleShape2D_m83y1")
+
+[node name="plant" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, 13)
+sprite_frames = SubResource("SpriteFrames_tikc3")
+animation = &"none"
+
+[node name="oniongrowtimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[node name="carrotgrowtimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[node name="cabbagegrowtimer" type="Timer" parent="."]
+
+[node name="corngrowtimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="timeout" from="oniongrowtimer" to="." method="_on_oniongrowtimer_timeout"]
+[connection signal="timeout" from="carrotgrowtimer" to="." method="_on_carrotgrowtimer_timeout"]

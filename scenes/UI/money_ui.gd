@@ -19,6 +19,9 @@ var current_money:int = 0:
 	set(new_val):
 		current_money = new_val
 		$Label.text = "Gold: " + str(current_money)
+
 func _physics_process(delta: float) -> void:
 	$carrottext.text = ("= " + str(Global.numofcarrots))
 	$oniontext.text = ("= " +str(Global.numofonions))
+	$cabbagetext.text = ("= " +str(Global.numofcabbages))
+	$corntext.text = ("= " +str(Global.numofcorns))

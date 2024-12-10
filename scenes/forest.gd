@@ -151,6 +151,8 @@ func _on_day_change_ui_menu_done() -> void:
 func _on_intro_textbox_text_finished() -> void:
 	intro_textbox.hide()
 	
-#func _physics_process(delta: float) -> void:
-	#$carrottext.text = ("= " + str(Global.numofcarrots))
-	#$onionicon.text = ("= " + str(Global.numofonions))
+func _physics_process(delta: float) -> void:
+	$carrottext.text = ("= " + str(Global.numofcarrots))
+	$oniontext.text = ("= " +str(Global.numofonions))
+	$oniontext.text = ("= " +str(Global.numofcabbages))
+	$oniontext.text = ("= " +str(Global.numofcorns))

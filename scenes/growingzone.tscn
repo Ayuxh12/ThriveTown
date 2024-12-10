@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ey7bka7mlyc5"]
+[gd_scene load_steps=19 format=3 uid="uid://ey7bka7mlyc5"]
 
 [ext_resource type="Script" path="res://scenes/growingzone.gd" id="1_sgsev"]
 [ext_resource type="Texture2D" uid="uid://bhixfchjxyovx" path="res://scenes/customers/farmingTilesheetComplete.png" id="2_aab4i"]
@@ -21,6 +21,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m83y1"]
 size = Vector2(14, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywgx0"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpany"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0xjh"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(16, 48, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gea6"]
 atlas = ExtResource("2_aab4i")
 region = Rect2(176, 32, 16, 16)
@@ -32,6 +44,18 @@ region = Rect2(160, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_f2t6k"]
 atlas = ExtResource("2_aab4i")
 region = Rect2(144, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iayv"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(80, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s5fl"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(64, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbmrb"]
+atlas = ExtResource("2_aab4i")
+region = Rect2(48, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pt3ea"]
 atlas = ExtResource("2_aab4i")
@@ -49,6 +73,20 @@ region = Rect2(96, 48, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ywgx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpany")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0xjh")
+}],
+"loop": true,
+"name": &"cabbagegrowing",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_3gea6")
 }, {
 "duration": 1.0,
@@ -59,6 +97,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"carrotgrowing",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iayv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s5fl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbmrb")
+}],
+"loop": true,
+"name": &"corngrowing",
 "speed": 0.0
 }, {
 "frames": [],
@@ -101,7 +153,7 @@ position = Vector2(14, 15)
 shape = SubResource("RectangleShape2D_m83y1")
 
 [node name="plant" type="AnimatedSprite2D" parent="."]
-position = Vector2(14, 13)
+position = Vector2(14, 9)
 sprite_frames = SubResource("SpriteFrames_tikc3")
 animation = &"none"
 
@@ -114,10 +166,14 @@ wait_time = 30.0
 one_shot = true
 
 [node name="cabbagegrowtimer" type="Timer" parent="."]
+wait_time = 30.0
 
 [node name="corngrowtimer" type="Timer" parent="."]
+wait_time = 30.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
 [connection signal="timeout" from="oniongrowtimer" to="." method="_on_oniongrowtimer_timeout"]
 [connection signal="timeout" from="carrotgrowtimer" to="." method="_on_carrotgrowtimer_timeout"]
+[connection signal="timeout" from="cabbagegrowtimer" to="." method="_on_cabbagegrowtimer_timeout"]
+[connection signal="timeout" from="corngrowtimer" to="." method="_on_corngrowtimer_timeout"]

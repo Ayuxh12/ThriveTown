@@ -23,6 +23,7 @@ func _on_sound_effects_value_changed(value: float) -> void:
 var game_scene:PackedScene = preload("res://scenes/forest.tscn")
 
 func _on_texture_button_pressed() -> void:
+	
 	get_tree().change_scene_to_packed(game_scene)
 
 

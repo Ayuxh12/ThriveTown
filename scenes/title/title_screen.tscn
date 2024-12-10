@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7oxpo3psb7s1"]
+[gd_scene load_steps=16 format=3 uid="uid://7oxpo3psb7s1"]
 
 [ext_resource type="Script" path="res://scenes/title/title_screen.gd" id="1_kxva1"]
 [ext_resource type="Texture2D" uid="uid://d3fsmqmamhxry" path="res://assets/sprites/Bodacious Games Logo.png" id="1_p7mm7"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dgwsbi0sg57d7" path="res://assets/sprites/plaaayyy_click.png" id="7_xnicn"]
 [ext_resource type="Texture2D" uid="uid://bpjpk3ynir1ya" path="res://assets/sprites/Music.png" id="9_f4xh3"]
 [ext_resource type="AudioStream" uid="uid://bgxgl2o48s205" path="res://assets/music/gentle-fields-194622.mp3" id="10_55pdm"]
+[ext_resource type="Texture2D" uid="uid://bwi2kp4rxox4u" path="res://newsletters/High Water.png" id="11_gqqe6"]
 
 [sub_resource type="Animation" id="Animation_2hsy4"]
 length = 0.001
@@ -314,6 +315,15 @@ texture = ExtResource("9_f4xh3")
 stream = ExtResource("10_55pdm")
 autoplay = true
 bus = &"Music"
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+visible = false
+z_index = 2
+offset_left = -139.0
+offset_top = -182.0
+offset_right = 789.0
+offset_bottom = 524.0
+texture = ExtResource("11_gqqe6")
 
 [connection signal="value_changed" from="SoundEffects" to="." method="_on_sound_effects_value_changed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://7mdk32hofwaf"]
+[gd_scene load_steps=77 format=3 uid="uid://7mdk32hofwaf"]
 
 [ext_resource type="Script" path="res://scenes/forest.gd" id="1_a4cl1"]
 [ext_resource type="Texture2D" uid="uid://dy1mucapih5i" path="res://assets/sprites/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px-1.png" id="1_y5lmg"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://ey7bka7mlyc5" path="res://scenes/growingzone.tscn" id="20_s0pig"]
 [ext_resource type="PackedScene" uid="uid://orgb2cglfvy1" path="res://scenes/onion_seedpack.tscn" id="21_bb2ih"]
 [ext_resource type="Texture2D" uid="uid://bhixfchjxyovx" path="res://scenes/customers/farmingTilesheetComplete.png" id="22_myadu"]
+[ext_resource type="PackedScene" uid="uid://c3kvpq36kgo1c" path="res://scenes/cabbage_seedpack.tscn" id="23_af0gg"]
+[ext_resource type="PackedScene" uid="uid://ipwerwnhg100" path="res://scenes/corn_seedpack.tscn" id="24_dw3om"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhq33"]
 size = Vector2(66, 11)
@@ -2640,11 +2642,19 @@ _data = {
 "fade_back": SubResource("Animation_lf7ua")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6c32w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e3p0"]
+atlas = ExtResource("22_myadu")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsv0r"]
 atlas = ExtResource("22_myadu")
 region = Rect2(128, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7aa7l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f1md"]
+atlas = ExtResource("22_myadu")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujq6l"]
 atlas = ExtResource("22_myadu")
 region = Rect2(80, 48, 16, 16)
 
@@ -2652,7 +2662,15 @@ region = Rect2(80, 48, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6c32w")
+"texture": SubResource("AtlasTexture_3e3p0")
+}],
+"loop": true,
+"name": &"cabbage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsv0r")
 }],
 "loop": true,
 "name": &"carrot",
@@ -2660,7 +2678,15 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7aa7l")
+"texture": SubResource("AtlasTexture_4f1md")
+}],
+"loop": true,
+"name": &"corn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujq6l")
 }],
 "loop": true,
 "name": &"onion",
@@ -3068,10 +3094,16 @@ position = Vector2(-161, 298)
 [node name="onion_seedpack" parent="." instance=ExtResource("21_bb2ih")]
 position = Vector2(-35, 251)
 
+[node name="cabbage_seedpack" parent="." instance=ExtResource("23_af0gg")]
+position = Vector2(-46, 252)
+
+[node name="corn_seedpack" parent="." instance=ExtResource("24_dw3om")]
+position = Vector2(-46, 266)
+
 [node name="carrottext" type="RichTextLabel" parent="."]
 offset_left = 38.0
 offset_top = 397.0
-offset_right = 39.0
+offset_right = 71.0
 offset_bottom = 397.0
 text = "= 0"
 
@@ -3079,7 +3111,7 @@ text = "= 0"
 position = Vector2(13.579, 363.001)
 scale = Vector2(-1.45128, 0.000122071)
 sprite_frames = SubResource("SpriteFrames_thkip")
-animation = &"carrot"
+animation = &"corn"
 
 [node name="oniontext" type="RichTextLabel" parent="."]
 offset_left = 55.0
@@ -3093,6 +3125,37 @@ position = Vector2(-6.875, 405.875)
 scale = Vector2(0.109375, -0.0156246)
 sprite_frames = SubResource("SpriteFrames_thkip")
 animation = &"onion"
+
+[node name="cabbagetext" type="RichTextLabel" parent="."]
+offset_left = 136.0
+offset_top = 328.0
+offset_right = 170.0
+offset_bottom = 389.0
+text = "= 0"
+
+[node name="cabbageicon" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6.875, 405.875)
+scale = Vector2(0.109375, -0.0156246)
+sprite_frames = SubResource("SpriteFrames_thkip")
+animation = &"onion"
+
+[node name="corntext" type="RichTextLabel" parent="."]
+offset_left = 77.0
+offset_top = 325.0
+offset_right = 111.0
+offset_bottom = 391.0
+text = "= 0"
+
+[node name="cornicon" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6.875, 405.875)
+scale = Vector2(0.109375, -0.0156246)
+sprite_frames = SubResource("SpriteFrames_thkip")
+animation = &"onion"
+
+[node name="Textbox" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="menu_done" from="DayChangeUI" to="." method="_on_day_change_ui_menu_done"]
 [connection signal="text_finished" from="CanvasLayer2/Intro Textbox" to="." method="_on_intro_textbox_text_finished"]

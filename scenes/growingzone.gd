@@ -19,6 +19,14 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 			plantgrowing = true
 			$oniongrowtimer.start()
 			$plant.play("oniongrowing")
+		elif plant == 3:
+			plantgrowing = true
+			$cabbagegrowtimer.start()
+			$plant.play("cabbagegrowing")
+		elif plant == 4:
+			plantgrowing = true
+			$corngrowtimer.start()
+			$plant.play("corngrowing")
 	else:
 		print("Plant is already growing here.")
 
@@ -38,6 +46,24 @@ func _on_carrotgrowtimer_timeout() -> void:
 		$plant.frame = 2
 		plant_grown = true
 
+
+func _on_cabbagegrowtimer_timeout() -> void:
+	if $plant.frame == 0:
+		$plant.frame = 1
+		$carrotgrowtimer.start()
+	elif $plant.frame == 1:
+		$plant.frame = 2
+		plant_grown = true
+
+
+func _on_corngrowtimer_timeout() -> void:
+	if $plant.frame == 0:
+		$plant.frame = 1
+		$carrotgrowtimer.start()
+	elif $plant.frame == 1:
+		$plant.frame = 2
+		plant_grown = true
+
 func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if plant_grown:
@@ -47,6 +73,13 @@ func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 			elif plant == 2:
 				Global.numofonions += 1
 				harvest_crop()
+			elif plant == 3:
+				Global.numofcorns += 1
+				harvest_crop()
+			elif plant == 4:
+				Global.numofcabbages += 1
+				harvest_crop()
+				
 		#print("Number of carrots = " + str(Global.numofcarrots))
 		#print("Number of onions = " + str(Global.numofonions))
 

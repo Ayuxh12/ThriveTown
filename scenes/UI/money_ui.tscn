@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctbg3rbtpcdv5"]
+[gd_scene load_steps=13 format=3 uid="uid://ctbg3rbtpcdv5"]
 
 [ext_resource type="Script" path="res://scenes/UI/money_ui.gd" id="1_laelk"]
 [ext_resource type="FontFile" uid="uid://lbrwpoagy426" path="res://assets/joystix monospace.otf" id="1_lm3e7"]
 [ext_resource type="Texture2D" uid="uid://bhixfchjxyovx" path="res://scenes/customers/farmingTilesheetComplete.png" id="3_jwop2"]
+[ext_resource type="Texture2D" uid="uid://c1wj7pe01fg8h" path="res://newsletters/Crop_Spritesheet.png" id="4_pia81"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c32w"]
 atlas = ExtResource("3_jwop2")
 region = Rect2(128, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7aa7l"]
-atlas = ExtResource("3_jwop2")
-region = Rect2(80, 48, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r770"]
+atlas = ExtResource("4_pia81")
+region = Rect2(0, 112, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mdyu3"]
 animations = [{
@@ -24,16 +25,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7aa7l")
+"texture": SubResource("AtlasTexture_3r770")
 }],
 "loop": true,
 "name": &"onion",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3e3p0"]
-atlas = ExtResource("3_jwop2")
-region = Rect2(0, 48, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip85c"]
+atlas = ExtResource("4_pia81")
+region = Rect2(112, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tsv0r"]
 atlas = ExtResource("3_jwop2")
@@ -51,7 +52,7 @@ region = Rect2(80, 48, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3e3p0")
+"texture": SubResource("AtlasTexture_ip85c")
 }],
 "loop": true,
 "name": &"cabbage",

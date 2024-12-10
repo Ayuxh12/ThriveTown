@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3kvpq36kgo1c"]
 
 [ext_resource type="Script" path="res://scenes/cabbage_seedpack.gd" id="1_56hic"]
-[ext_resource type="Texture2D" uid="uid://bhixfchjxyovx" path="res://scenes/customers/farmingTilesheetComplete.png" id="2_ycxaw"]
+[ext_resource type="Texture2D" uid="uid://c1wj7pe01fg8h" path="res://newsletters/Crop_Spritesheet.png" id="2_enls7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_reo7o"]
-atlas = ExtResource("2_ycxaw")
-region = Rect2(64, 48, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm118"]
+atlas = ExtResource("2_enls7")
+region = Rect2(96, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x5xwi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_reo7o")
+"texture": SubResource("AtlasTexture_xm118")
 }],
 "loop": true,
 "name": &"default",

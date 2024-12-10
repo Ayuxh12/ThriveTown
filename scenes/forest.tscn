@@ -3092,7 +3092,7 @@ z_index = -1
 position = Vector2(-161, 298)
 
 [node name="onion_seedpack" parent="." instance=ExtResource("21_bb2ih")]
-position = Vector2(-35, 251)
+position = Vector2(-35, 250)
 
 [node name="cabbage_seedpack" parent="." instance=ExtResource("23_af0gg")]
 position = Vector2(-46, 252)
@@ -3127,10 +3127,10 @@ sprite_frames = SubResource("SpriteFrames_thkip")
 animation = &"onion"
 
 [node name="cabbagetext" type="RichTextLabel" parent="."]
-offset_left = 136.0
-offset_top = 328.0
-offset_right = 170.0
-offset_bottom = 389.0
+offset_left = 162.0
+offset_top = 400.0
+offset_right = 163.0
+offset_bottom = 404.0
 text = "= 0"
 
 [node name="cabbageicon" type="AnimatedSprite2D" parent="."]
@@ -3140,10 +3140,10 @@ sprite_frames = SubResource("SpriteFrames_thkip")
 animation = &"onion"
 
 [node name="corntext" type="RichTextLabel" parent="."]
-offset_left = 77.0
-offset_top = 325.0
-offset_right = 111.0
-offset_bottom = 391.0
+offset_left = 127.0
+offset_top = 405.0
+offset_right = 128.0
+offset_bottom = 426.0
 text = "= 0"
 
 [node name="cornicon" type="AnimatedSprite2D" parent="."]

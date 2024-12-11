@@ -162,6 +162,7 @@ animation = &"corn"
 
 [node name="cabbagetext2" type="RichTextLabel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 136.0
 offset_top = 328.0
 offset_right = 170.0
@@ -170,6 +171,7 @@ text = "= 0"
 
 [node name="corntext2" type="RichTextLabel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 77.0
 offset_top = 325.0
 offset_right = 111.0

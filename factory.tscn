@@ -26,7 +26,8 @@ z_index = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = -7
-position = Vector2(50, 66)
+position = Vector2(65.5, 86.5)
+scale = Vector2(0.663043, 0.669355)
 sprite_frames = SubResource("SpriteFrames_q4alk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]

@@ -11,7 +11,7 @@ class_name Player
 
 @export var stamina_bar:TextureProgressBar
 @export var health_component:HealthComponent
-
+@onready var camera = $Camera2D
 
 signal new_item_collected(item:Item)
 signal dropped_off_items()
@@ -122,6 +122,8 @@ func switch_directions(state) -> void:
 		tool_animated_sprite.position = Vector2(-5, -2)
 	tool_animated_sprite.flip_h = state
 
+#func player():
+	#pass
 
 func player_sell_method():
 	pass

@@ -11,6 +11,7 @@ extends Node2D
 
 # Ending scene reference
 @export var end_scene: PackedScene = preload("res://scenes/Ending/ending_scene.tscn")
+@export var water_animation : PackedScene  # Reference to the animation scene (drag and drop the .tscn file in the Inspector)
 
 # UI References
 @onready var tired_label = $CanvasLayer/TiredLabel
@@ -156,3 +157,23 @@ func _physics_process(delta: float) -> void:
 	$oniontext.text = ("= " +str(Global.numofonions))
 	$oniontext.text = ("= " +str(Global.numofcabbages))
 	$oniontext.text = ("= " +str(Global.numofcorns))
+
+
+
+
+# Load the water animation scene
+
+func initialize_water_animation():
+	var water_animation_instance = water_animation.instantiate()
+	add_child(water_animation_instance)  # Add it as a child of the current scene
+	
+	# Position the animation (adjust based on your scene layout)
+	#water_animation_instance.position = Vector2(400, 300)  # Example coordinates
+
+func initialize_sprinkler_animation():
+	var sprinkler_animation_instance = initialize_sprinkler_animation().instantiate()
+	add_child(sprinkler_animation_instance)
+
+func initialize_smoke_animation():
+	var smoke_animation_instance = initialize_smoke_animation().instentiate()
+	add_child(smoke_animation_instance)

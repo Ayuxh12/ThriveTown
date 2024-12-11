@@ -2824,7 +2824,7 @@ z_as_relative = false
 offset_top = 1.0
 offset_bottom = 1.0
 mouse_filter = 2
-player = NodePath("../../Player")
+player = NodePath("../../TileMap/Player")
 metadata/_edit_use_anchors_ = true
 
 [node name="TiredLabel" type="Label" parent="CanvasLayer"]
@@ -2867,7 +2867,7 @@ scale = Vector2(0.6, 0.6)
 [node name="Tavern" parent="." node_paths=PackedStringArray("collect_list", "player") instance=ExtResource("10_lpld5")]
 position = Vector2(2073, -1242)
 collect_list = NodePath("../CanvasLayer/CollectList")
-player = NodePath("../Player")
+player = NodePath("../TileMap/Player")
 
 [node name="TavernSpawnPoint" type="Node2D" parent="Tavern"]
 position = Vector2(333, 342)
@@ -2916,6 +2916,15 @@ layer_6/tile_data = PackedInt32Array(1114123, 1507329, 30, 1114124, 1572865, 30,
 layer_7/name = "Tavern Details 2"
 layer_7/z_index = 2
 layer_7/tile_data = PackedInt32Array(1179660, 2621441, 45)
+
+[node name="Player" parent="TileMap" node_paths=PackedStringArray("stamina_bar", "money_ui") instance=ExtResource("2_bwlj7")]
+position = Vector2(2293.27, -993.371)
+scale = Vector2(1, 1)
+stamina_bar = NodePath("../../CanvasLayer/TextureProgressBar")
+money_ui = NodePath("../../CanvasLayer/MoneyUI")
+
+[node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
+zoom = Vector2(1.7, 1.7)
 
 [node name="Smoke" type="AnimatedSprite2D" parent="."]
 z_index = 2
@@ -2966,7 +2975,7 @@ position = Vector2(374, -43)
 [node name="RockSpawners" type="Node2D" parent="."]
 
 [node name="Node2D" type="Node2D" parent="RockSpawners"]
-position = Vector2(404, -158)
+position = Vector2(407, -165)
 
 [node name="Node2D2" type="Node2D" parent="RockSpawners"]
 position = Vector2(415, -62)
@@ -3237,16 +3246,6 @@ offset_bottom = 23.0
 [node name="Factory" parent="." instance=ExtResource("25_kyplg")]
 position = Vector2(748, -451)
 rotation = -0.000274362
-
-[node name="Player" parent="." node_paths=PackedStringArray("stamina_bar", "money_ui") instance=ExtResource("2_bwlj7")]
-position = Vector2(2293, -994)
-rotation = -0.000274362
-scale = Vector2(1, 1)
-stamina_bar = NodePath("../CanvasLayer/TextureProgressBar")
-money_ui = NodePath("../CanvasLayer/MoneyUI")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.7, 1.7)
 
 [node name="world2" parent="." instance=ExtResource("28_qgagl")]
 visible = false

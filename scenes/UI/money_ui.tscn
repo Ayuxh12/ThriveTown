@@ -1,0 +1,179 @@
+[gd_scene load_steps=13 format=3 uid="uid://ctbg3rbtpcdv5"]
+
+[ext_resource type="Script" path="res://scenes/UI/money_ui.gd" id="1_laelk"]
+[ext_resource type="FontFile" uid="uid://lbrwpoagy426" path="res://assets/joystix monospace.otf" id="1_lm3e7"]
+[ext_resource type="Texture2D" uid="uid://bhixfchjxyovx" path="res://scenes/customers/farmingTilesheetComplete.png" id="3_jwop2"]
+[ext_resource type="Texture2D" uid="uid://c1wj7pe01fg8h" path="res://newsletters/Crop_Spritesheet.png" id="4_pia81"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c32w"]
+atlas = ExtResource("3_jwop2")
+region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r770"]
+atlas = ExtResource("4_pia81")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdyu3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c32w")
+}],
+"loop": true,
+"name": &"carrot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r770")
+}],
+"loop": true,
+"name": &"onion",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip85c"]
+atlas = ExtResource("4_pia81")
+region = Rect2(112, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsv0r"]
+atlas = ExtResource("3_jwop2")
+region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f1md"]
+atlas = ExtResource("3_jwop2")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujq6l"]
+atlas = ExtResource("3_jwop2")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3on5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip85c")
+}],
+"loop": true,
+"name": &"cabbage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsv0r")
+}],
+"loop": true,
+"name": &"carrot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f1md")
+}],
+"loop": true,
+"name": &"corn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujq6l")
+}],
+"loop": true,
+"name": &"onion",
+"speed": 5.0
+}]
+
+[node name="MoneyUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_laelk")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 24)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 105.0
+offset_bottom = 28.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_lm3e7")
+text = "Gold: 0"
+
+[node name="carrottext" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 42.5
+offset_top = 406.5
+offset_right = 85.5
+offset_bottom = 434.5
+text = "= 0"
+
+[node name="carroticon" type="AnimatedSprite2D" parent="."]
+position = Vector2(19.25, 419.25)
+scale = Vector2(2.03125, 2.03125)
+sprite_frames = SubResource("SpriteFrames_mdyu3")
+animation = &"carrot"
+
+[node name="oniontext" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 372.0
+offset_right = 86.0
+offset_bottom = 400.0
+text = "= 0"
+
+[node name="onionicon" type="AnimatedSprite2D" parent="."]
+position = Vector2(19.75, 381.75)
+scale = Vector2(2.09375, 2.09375)
+sprite_frames = SubResource("SpriteFrames_mdyu3")
+animation = &"onion"
+
+[node name="cabbagetext" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 307.0
+offset_right = 78.0
+offset_bottom = 331.0
+text = "= 0"
+
+[node name="cabbageicon" type="AnimatedSprite2D" parent="."]
+position = Vector2(20.5545, 348.114)
+scale = Vector2(-1.81987, -1.8608)
+sprite_frames = SubResource("SpriteFrames_3on5p")
+animation = &"cabbage"
+
+[node name="corntext" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 338.0
+offset_right = 77.0
+offset_bottom = 362.0
+text = "= 0"
+
+[node name="cornicon" type="AnimatedSprite2D" parent="."]
+position = Vector2(17.5, 319.75)
+scale = Vector2(1.8125, 1.84375)
+sprite_frames = SubResource("SpriteFrames_3on5p")
+animation = &"corn"
+
+[node name="cabbagetext2" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 136.0
+offset_top = 328.0
+offset_right = 170.0
+offset_bottom = 389.0
+text = "= 0"
+
+[node name="corntext2" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 77.0
+offset_top = 325.0
+offset_right = 111.0
+offset_bottom = 391.0
+text = "= 0"

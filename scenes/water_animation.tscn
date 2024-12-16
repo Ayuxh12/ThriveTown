@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1c78fjxtabie"]
+
+[ext_resource type="Texture2D" uid="uid://ua4abvemcq1j" path="res://newsletters/Water Animation .png" id="1_nicn4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtusr"]
+atlas = ExtResource("1_nicn4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e46qc"]
+atlas = ExtResource("1_nicn4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iwtbv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtusr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e46qc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.2
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iwtbv")
+autoplay = "default"
+frame_progress = 0.59374

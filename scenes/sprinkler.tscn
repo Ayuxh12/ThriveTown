@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxwqyc3tirr3r"]
+
+[ext_resource type="Texture2D" uid="uid://ctqnxfletjei6" path="res://newsletters/sprinkler.png" id="1_kio0s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3avxk"]
+atlas = ExtResource("1_kio0s")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owadf"]
+atlas = ExtResource("1_kio0s")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nwln"]
+atlas = ExtResource("1_kio0s")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7l0a"]
+atlas = ExtResource("1_kio0s")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pnhmb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3avxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owadf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nwln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7l0a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="sprinkler" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.5, 11)
+scale = Vector2(1.4375, 1.6875)
+sprite_frames = SubResource("SpriteFrames_pnhmb")
+autoplay = "default"
+frame_progress = 0.703251

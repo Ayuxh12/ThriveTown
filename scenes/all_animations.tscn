@@ -1,0 +1,205 @@
+[gd_scene load_steps=5 format=3 uid="uid://vlroelxj3utb"]
+
+[ext_resource type="Texture2D" uid="uid://ua4abvemcq1j" path="res://newsletters/Water Animation .png" id="1_ojt56"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lxcp"]
+atlas = ExtResource("1_ojt56")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n0jx"]
+atlas = ExtResource("1_ojt56")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p70m6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lxcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n0jx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="all animations" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 8)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, 8)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 8)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(72, 8)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+position = Vector2(88, 8)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 24)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 24)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, 24)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 24)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="."]
+position = Vector2(72, 24)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="."]
+position = Vector2(88, 24)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 40)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 40)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, 40)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 40)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="."]
+position = Vector2(72, 40)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="."]
+position = Vector2(88, 40)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 56)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 56)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, 56)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 56)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D23" type="AnimatedSprite2D" parent="."]
+position = Vector2(72, 56)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D24" type="AnimatedSprite2D" parent="."]
+position = Vector2(88, 56)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D25" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 72)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D26" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 72)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D27" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, 72)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D28" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 72)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D29" type="AnimatedSprite2D" parent="."]
+position = Vector2(72, 72)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D30" type="AnimatedSprite2D" parent="."]
+position = Vector2(88, 72)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D31" type="AnimatedSprite2D" parent="."]
+position = Vector2(104, 8)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D32" type="AnimatedSprite2D" parent="."]
+position = Vector2(104, 24)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D33" type="AnimatedSprite2D" parent="."]
+position = Vector2(104, 40)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D34" type="AnimatedSprite2D" parent="."]
+position = Vector2(104, 56)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="AnimatedSprite2D35" type="AnimatedSprite2D" parent="."]
+position = Vector2(104, 72)
+sprite_frames = SubResource("SpriteFrames_p70m6")
+frame_progress = 0.0860812
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
